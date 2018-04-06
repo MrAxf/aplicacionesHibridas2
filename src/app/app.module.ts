@@ -7,9 +7,12 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { ReposPage } from '../pages/repos/repos';
+import { RepoDetailsPage } from '../pages/repo-details/repo-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ReposProvider } from '../providers/repos/repos';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    ReposPage
+    ReposPage,
+    RepoDetailsPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -29,12 +34,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    ReposPage
+    ReposPage,
+    RepoDetailsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ReposProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ReposProvider
   ]
 })
 export class AppModule {}

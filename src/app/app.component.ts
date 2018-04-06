@@ -3,11 +3,10 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ListPage } from '../pages/list/list';
+import { ReposPage } from '../pages/repos/repos';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ReposPage } from '../pages/repos/repos';
 
 
 @Component({
@@ -30,9 +29,8 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
-      { title: 'Repos Page', component: ReposPage }
+      { title: 'Inicio', component: HelloIonicPage },
+      { title: 'Repos de usuario', component: ReposPage }
     ];
   }
 
